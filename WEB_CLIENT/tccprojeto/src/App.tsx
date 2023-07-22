@@ -1,16 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme.styles";
+import { Box } from "@mui/material";
+import Home from "./pages/Home/Home";
 
-function App() {
+const App = () =>{
     return (
-        <div className="App">
-            <h1>aaaa</h1>
-            
-   
-   
-        </div>
+        <ThemeProvider theme={theme}>
+            <Box
+                width="100vw"
+                height="100vh"
+                bgcolor={theme.palette.background.default}
+            >
+                <Home />
+            </Box>
+        </ThemeProvider>
     );
-}
+};
 
 export default App;
